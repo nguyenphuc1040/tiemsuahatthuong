@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Tiệm Sữa Hạt Thương</title>
+    <meta name="description"
+        content="Menu đồ uống Tiệm Sữa Hạt Thương - Sữa hạt tươi ngon, đậu nành, sữa bắp, sữa gạo lứt">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+
+<body>
+
+    <div class="menu-page">
+        <!-- Decorative elements -->
+        <div class="decor-leaf-tl"></div>
+        <div class="decor-leaf-br"></div>
+        <div class="decor-dots">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <!-- Header -->
+        <header class="menu-header">
+            <div class="logo-container">
+                <img src="assets/logo/logo.png" alt="Logo Tiệm Sữa Hạt Thương">
+            </div>
+            <p class="menu-title">— Menu —</p>
+            <h1 class="shop-name">Tiệm Sữa Hạt Thương</h1>
+        </header>
+
+        <!-- Menu Items Grid (rendered dynamically from data/menu-data.js) -->
+        <section class="menu-grid" id="menu-grid"></section>
+
+        <!-- Special Options Section -->
+        <section class="special-section">
+            <div class="mix-box">
+                <div class="mix-images">
+                    <img src="assets/images/sua-gao-lut.jpg" alt="Sữa gạo lứt" class="mix-img img-1">
+                    <img src="assets/images/sua-bap.jpg" alt="Đậu nành" class="mix-img img-2">
+                    <img src="assets/images/dau-nanh-me-den.jpg" alt="Đậu nành mè đen" class="mix-img img-3">
+                </div>
+                <div class="mix-content">
+                    <h2 class="mix-title">Sữa Hạt Mix</h2>
+                    <p class="mix-desc">Kết hợp các loại hạt bất kỳ theo sở thích của bạn</p>
+                </div>
+                <div class="mix-price">
+                    <span class="price-badge large" contenteditable="true" id="price-mix">25</span>
+                </div>
+            </div>
+
+            <div class="service-note-v2">
+                <span class="note-icon">🍵❄️</span>
+                <p>Phục vụ <strong>Nóng & Lạnh</strong></p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Controls (hidden when printing) -->
+    <div class="controls">
+        <button class="btn-control btn-pdf" onclick="exportPDF()" title="Lưu menu thành PDF">
+            📄 Lưu PDF
+        </button>
+    </div>
+    <div class="tooltip"></div>
+    <div class="edit-hint">Click vào giá để chỉnh sửa</div>
+
+    <script src="data/menu-data.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+
+</html>

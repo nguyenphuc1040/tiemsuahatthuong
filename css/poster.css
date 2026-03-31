@@ -1,0 +1,218 @@
+/* ===== POSTER-STYLE MENU CSS ===== */
+:root {
+  --primary: #5c3b2e; /* Deep Coffee/Nut Brown */
+  --accent: #e11d48;  /* Red for prominence */
+  --bg: #ffffff;
+  --text: #2d1b10;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  color: var(--text);
+  line-height: 1.4;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+@font-face {
+  font-family: 'BrushScript';
+  src: local('Brush Script MT'), local('BrushScriptMT'), local('cursive');
+}
+
+.poster-canvas {
+  width: 1000px;
+  min-height: 1414px; /* A4 Ratio approx */
+  background: var(--bg);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decor stars from image */
+.decor-stars {
+  position: absolute;
+  top: 40px; left: 40px;
+  font-size: 2rem; color: #fbbf24;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+.title-wrap h1 {
+  font-family: 'Playfair Display', serif; /* Using existing font for high quality */
+  font-size: 7rem;
+  font-weight: 900;
+  color: var(--text);
+  line-height: 0.8;
+  letter-spacing: -2px;
+  margin-bottom: 10px;
+}
+.title-underline {
+  width: 150px; height: 8px;
+  background: var(--text);
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+.hotline-box {
+  background: #fdf2f2;
+  border: 1px dashed var(--accent);
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-align: center;
+  margin-top: 10px;
+}
+.hotline-box .label { font-size: 1rem; font-weight: 700; color: var(--text); }
+.hotline-box .number { font-size: 1.5rem; font-weight: 900; color: var(--accent); }
+.address {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.address-icon { background: var(--text); color: white; padding: 4px; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+
+/* ===== COLUMNS ===== */
+.menu-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+section {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--text);
+  padding-bottom: 8px;
+}
+.section-head h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.section-icon { font-size: 1.5rem; }
+
+/* Item List */
+.item-list {
+  list-style: none;
+}
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.item-name { flex: 1; }
+.item-price { color: var(--text); font-weight: 900; min-width: 50px; text-align: right; }
+
+/* Section Images (Illustrative) */
+.section-illustrator {
+  position: absolute;
+  top: -15px; right: 0;
+  width: 90px; height: 90px;
+  z-index: 0;
+  opacity: 0.8;
+  pointer-events: none;
+}
+.section-illustrator img {
+  width: 100%; height: 100%; object-fit: contain;
+}
+
+/* Specific: Milk Usage Section */
+.milk-usage {
+  grid-column: 1;
+}
+.milk-grid {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.milk-brand {
+  text-align: center;
+  position: relative;
+}
+.milk-brand img { width: 70px; height: 90px; object-fit: contain; }
+.milk-brand .price-tag {
+  position: absolute; top: -5px; right: -5px;
+  background: var(--accent); color: white;
+  font-size: 0.8rem; font-weight: 900;
+  padding: 2px 6px; border-radius: 50%;
+}
+.milk-brand p { font-size: 0.85rem; font-weight: 800; margin-top: 5px; }
+
+/* Specific: Topping Section */
+.topping-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.topping-item {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+.topping-illus {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+.topping-illus img { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--border); }
+
+/* ===== FOOTER ===== */
+footer {
+  margin-top: 60px;
+  border-top: 2px solid var(--border);
+  padding-top: 30px;
+}
+.note-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.note-icon { font-size: 1.5rem; color: var(--accent); }
+.thanks-msg {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.thanks-msg::before, .thanks-msg::after { content: '❤️'; }
+
+
+/* Print Specifics */
+@media print {
+  body { background: white; padding: 0; }
+  .poster-canvas { box-shadow: none; border: none; width: 100%; height: auto; }
+}

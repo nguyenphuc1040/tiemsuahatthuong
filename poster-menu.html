@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiệm Sữa Hạt Thương - Menu Poster</title>
+  <link rel="stylesheet" href="css/poster.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="poster-canvas">
+    <div class="decor-stars">✨ ✦</div>
+
+    <header>
+      <div class="title-wrap">
+        <h1>Menu</h1>
+        <div class="title-underline"></div>
+      </div>
+      <div class="header-right">
+        <div class="hotline-box">
+          <div class="label">Hotline:</div>
+          <div class="number">0358 458 971</div>
+          <div class="label">(Phục vụ tận tâm)</div>
+        </div>
+        <div class="address">
+          <div class="address-icon">📍</div>
+          <span>Tiệm Sữa Hạt Thương - Sữa Tươi Mỗi Ngày</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="menu-body" id="menu-grid">
+      <!-- Left Column -->
+      <div class="col-left">
+        <!-- SỮA HẠT NGUYÊN CHẤT -->
+        <section id="sec-seed-pure">
+          <div class="section-head">
+            <div class="section-icon">🌿</div>
+            <h2>Sữa Hạt Nguyên Chất</h2>
+          </div>
+          <div class="section-illustrator">
+            <img src="assets/images/hat-dieu-yen-mach.jpg" alt="Nut Milk Illustrator">
+          </div>
+          <ul class="item-list" id="list-seed-pure">
+            <!-- Rendered by JS -->
+          </ul>
+        </section>
+
+        <!-- SỮA HẠT MIX VỊ -->
+        <section id="sec-seed-mix">
+          <div class="section-head">
+            <div class="section-icon">🥜</div>
+            <h2>Sữa Hạt Mix Vị</h2>
+          </div>
+          <div class="section-illustrator">
+            <img src="assets/images/dau-nanh-me-den.jpg" alt="Nut Milk Illustrator">
+          </div>
+          <ul class="item-list" id="list-seed-mix">
+            <!-- Rendered by JS -->
+          </ul>
+        </section>
+
+        <!-- MILK USAGE SECTION (Graphic) -->
+        <section class="milk-usage">
+          <div class="section-head">
+            <div class="section-icon">🥛</div>
+            <h2>Nguyên Liệu Tuyển Chọn</h2>
+          </div>
+          <div class="milk-grid">
+            <div class="milk-brand">
+              <img src="assets/images/gau-rang.jpg" alt="Sữa Ba Lan">
+              <div class="price-tag">+10</div>
+              <p>Sữa Tươi Ba Lan</p>
+            </div>
+            <div class="milk-brand">
+              <img src="assets/images/sua-bap.jpg" alt="Sữa Gấu">
+              <div class="price-tag">+10</div>
+              <p>Sữa Gấu (Nội Địa)</p>
+            </div>
+            <div class="milk-brand">
+              <img src="assets/images/sua-gao-lut.jpg" alt="Sữa Oatside">
+              <div class="price-tag">+5</div>
+              <p>Sữa Hạt Oatside</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-right">
+        <!-- CAFÉ & LATTE SECTION -->
+        <section id="sec-coffee">
+          <div class="section-head">
+            <div class="section-icon">☕</div>
+            <h2>Café & Latte</h2>
+          </div>
+          <div class="section-illustrator">
+            <img src="assets/images/matcha-latte.png" alt="Latte Illustrator">
+          </div>
+          <ul class="item-list" id="list-coffee">
+            <!-- Rendered by JS -->
+          </ul>
+        </section>
+
+        <!-- TOPPING SECTION -->
+        <section id="sec-topping">
+          <div class="section-head">
+            <div class="section-icon">🍬</div>
+            <h2>Topping Thêm</h2>
+          </div>
+          <div class="topping-grid" id="list-topping">
+            <!-- Rendered by JS -->
+          </div>
+          <div class="topping-illus">
+            <img src="assets/images/gao-rang.jpg" alt="T1">
+            <img src="assets/images/sua-bap.jpg" alt="T2">
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      <div class="note-box">
+        <div class="note-icon">📌</div>
+        <div class="note-content">
+          Lưu ý: Tiệm nhận ship từ 2 ly trở lên khu vực nội thành. <br>
+          (Xa hơn tính thêm phí ship nhẹ nhàng ạ 🌸)
+        </div>
+      </div>
+      <div class="thanks-msg">
+        Chúc bạn iu một ngày tốt lành
+      </div>
+    </footer>
+  </div>
+
+  <script src="data/menu-data.js"></script>
+  <script>
+    function renderSection(listId, items) {
+      const list = document.getElementById(listId);
+      list.innerHTML = items.map(item => `
+        <li class="menu-item">
+          <span class="item-name">${item.name}</span>
+          <span class="item-price">${item.price}k</span>
+        </li>
+      `).join('');
+    }
+
+    function renderToppings(listId, items) {
+      const list = document.getElementById(listId);
+      list.innerHTML = items.map(item => `
+        <div class="topping-item">
+          <span class="name">${item.name}</span>
+          <span class="price">+${item.price}k</span>
+        </div>
+      `).join('');
+    }
+
+    // Filter and Render based on Data Categories
+    const seedMilks = MENU_ITEMS.filter(i => i.category === 'seed-milk');
+    
+    // Heuristic for "Pure" vs "Mix"
+    const pureNames = ["đậu nành", "mè đen", "sữa bắp", "gạo lứt", "đậu đỏ", "hạt điều", "sen"];
+    const pureSeed = seedMilks.filter(i => {
+      const n = i.name.toLowerCase();
+      // Pure if name is short or only contains one known ingredient without "-" or "mix" or "và"
+      return n.split(' ').length <= 4 && !n.includes('-') && !n.includes('mix') && !n.includes('và');
+    });
+    const mixSeed = seedMilks.filter(i => !pureSeed.includes(i));
+
+    renderSection('list-seed-pure', pureSeed);
+    renderSection('list-seed-mix', mixSeed);
+
+    const coffeeLattes = MENU_ITEMS.filter(i => i.category === 'coffee-latte');
+    renderSection('list-coffee', coffeeLattes);
+
+    const toppings = MENU_ITEMS.filter(i => i.category === 'extras');
+    renderToppings('list-topping', toppings);
+
+  </script>
+</body>
+</html>
